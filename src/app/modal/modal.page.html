@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-icon (click)="closeModal()" slot="start" name="arrow-back"></ion-icon>
+    <ion-title>modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating">Nombre del cliente</ion-label>
+    <ion-input [(ngModel)]="cliente"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Tipo de servicio</ion-label>
+    <ion-input [(ngModel)]="tipo"></ion-input>
+  </ion-item>
+
+  <ion-button class="boton" (click)="editarCita()">Editar cita</ion-button>
+</ion-content>

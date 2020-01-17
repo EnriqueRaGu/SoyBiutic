@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon (click)="volver()" slot="start" name="arrow-back"></ion-icon>
+    <ion-title>Agendar cita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+      <img class="img" src="assets/icon.png">
+
+          <ion-item>
+            <ion-label position="floating">Nombre del cliente</ion-label>
+            <ion-input [(ngModel)]="cliente"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Servicio</ion-label>
+            <ion-select [(ngModel)]="tipo">
+              <ion-select-option value="uñas">Uñas</ion-select-option>
+              <ion-select-option value="pies">Pies</ion-select-option>
+              <ion-select-option value="manos y pies">Manos y pies</ion-select-option>
+            </ion-select>
+          </ion-item>
+            
+          <ion-item>
+              <ion-label>Fecha</ion-label>
+              <ion-select [(ngModel)]="fecha">
+                <ion-select-option value={{fechaHoy}}>{{fechaHoy}}</ion-select-option>
+                <ion-select-option value={{fecha2}}>{{fecha2}}</ion-select-option>
+                <ion-select-option value={{fecha3}}>{{fecha3}}</ion-select-option>
+                <ion-select-option value={{fecha4}}>{{fecha4}}</ion-select-option>
+                <ion-select-option value={{fecha5}}>{{fecha5}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+      
+          <ion-item>
+            <ion-label>Hora Inicio</ion-label>
+            <ion-select [(ngModel)]="horainicio">
+              <ion-select-option [value]=7>7:00</ion-select-option>
+              <ion-select-option [value]=7.5>7:30</ion-select-option>
+              <ion-select-option [value]=8>8:00</ion-select-option>
+              <ion-select-option [value]=8.5>8:30</ion-select-option>
+              <ion-select-option [value]=9>9:00</ion-select-option>
+              <ion-select-option [value]=9.5>9:30</ion-select-option>
+              <ion-select-option [value]=10>10:00</ion-select-option>
+              <ion-select-option [value]=10.5>10:30</ion-select-option>
+              <ion-select-option [value]=11>11:00</ion-select-option>
+              <ion-select-option [value]=11.5>11:30</ion-select-option>
+              <ion-select-option [value]=12>12:00</ion-select-option>
+              <ion-select-option [value]=12.5>12:30</ion-select-option>
+              <ion-select-option [value]=13>13:00</ion-select-option>
+              <ion-select-option [value]=13.5>13:30</ion-select-option>
+              <ion-select-option [value]=14>14:00</ion-select-option>
+              <ion-select-option [value]=14.5>14:30</ion-select-option>
+              <ion-select-option [value]=15>15:00</ion-select-option>
+              <ion-select-option [value]=15.5>15:30</ion-select-option>
+              <ion-select-option [value]=16>16:00</ion-select-option>
+              <ion-select-option [value]=16.5>16:30</ion-select-option>
+              <ion-select-option [value]=17>17:00</ion-select-option>
+              <ion-select-option [value]=17.5>17:30</ion-select-option>
+              <ion-select-option [value]=18>18:00</ion-select-option>
+              <ion-select-option [value]=18.5>18:30</ion-select-option>
+              <ion-select-option [value]=19>19:00</ion-select-option>
+              <ion-select-option [value]=19.5>19:30</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+              <ion-label>Hora Fin</ion-label>
+              <ion-select [(ngModel)]="horafin">
+                <ion-select-option [value]=7>7:00</ion-select-option>
+                <ion-select-option [value]=8>8:00</ion-select-option>
+                <ion-select-option [value]=9>9:00</ion-select-option>
+                <ion-select-option [value]=10>10:00</ion-select-option>
+                <ion-select-option [value]=11>11:00</ion-select-option>
+                <ion-select-option [value]=12>12:00</ion-select-option>
+                <ion-select-option [value]=13>13:00</ion-select-option>
+                <ion-select-option [value]=14>14:00</ion-select-option>
+                <ion-select-option [value]=15>15:00</ion-select-option>
+                <ion-select-option [value]=16>16:00</ion-select-option>
+                <ion-select-option [value]=17>17:00</ion-select-option>
+                <ion-select-option [value]=18>18:00</ion-select-option>
+                <ion-select-option [value]=19>19:00</ion-select-option>
+              </ion-select>
+            </ion-item>
+        
+          <ion-button class="boton" (click)="comprobar()" [disabled]="!cliente || !tipo || !fecha || !horainicio || !horafin">Agendar cita</ion-button>
+  
+  </div>
+</ion-content>

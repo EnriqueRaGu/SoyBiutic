@@ -1,0 +1,40 @@
+  <ion-header>
+    <ion-toolbar slot="right" color="secondary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-title>Soy Biutic</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+      <div class="pantalla">
+          <app-cargando *ngIf="!empleados"></app-cargando>
+                <ion-menu side="start" menuId="first">
+                    <ion-header>
+                      <ion-toolbar color="primary">
+                        <ion-title>Opciones</ion-title>
+                      </ion-toolbar>
+                    </ion-header>
+                    <ion-content>
+                      <ion-list>
+                        <ion-item (click)="trabajador()">Añadir trabajador</ion-item>
+                        <ion-item>Eliminar trabajador</ion-item>
+                        <ion-item (click)="cerrarSesion()">Cerrar sesión</ion-item>
+                      </ion-list>
+                    </ion-content>
+                  </ion-menu>
+                  <ion-router-outlet main></ion-router-outlet>
+                  
+          <ion-card *ngFor="let empleado of empleados" (click)="encargada(empleado.nombre)">
+                <ion-card-header class="foto">
+                  <img class="img" src="https://ucarecdn.com/{{ empleado.image }}/-/scale_crop/200x200/center/">
+                </ion-card-header>
+                <ion-card-content class="contenido">
+                    <ion-card-title>{{empleado.nombre}}</ion-card-title>
+                    <ion-label>Facturado: <b class="b">{{facturado}}</b></ion-label>
+                </ion-card-content>
+          </ion-card>
+          <!-- <p id="demo"></p> -->
+      </div> 
+  </ion-content>

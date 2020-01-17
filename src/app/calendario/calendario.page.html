@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon (click)="closeModal()" slot="start" name="close"></ion-icon>
+    <ion-title>calendario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="share-modal">
+
+  </div>
+      <p>{{mes}}</p>
+      <calendar
+        [eventSource]="eventSource" 
+        [calendarMode]="calendar.mode" 
+        [currentDate]="calendar.currentDate"
+        (onEventSelected)="onEventSelected($event)"
+        (onTitleChanged)="onViewTitleChanged($event)"
+        (onTimeSelected)="onTimeSelected($event)" 
+        startHour="7"
+        endHour="20"
+        step="30"
+        startingDayWeek="1">
+      </calendar>
+
+</ion-content>

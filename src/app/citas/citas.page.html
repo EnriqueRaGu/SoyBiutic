@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-icon (click)="volver()" slot="start" name="arrow-back"></ion-icon>
+    <ion-title slot="start">{{nombre}}</ion-title>
+    <ion-icon class="calendario" slot="end" name="calendar" (click)="irCalendario()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="pantalla"> 
+      <app-cargando *ngIf="arr==0"></app-cargando>
+      
+            <ion-card *ngFor="let cita of citas">
+                <ion-card-header class="hrs">
+                    <p class="hora">{{cita.Horainicio}}:00</p>      
+                </ion-card-header>
+                <ion-card-content class="dts">
+                    <p><b>Cliente: </b>{{cita.Cliente}}</p>
+                    <p><b>Servicio: </b>{{cita.Tipo}}</p>
+                    <p><b>Fecha: </b>{{cita.Fecha}}</p>
+                    <p class="horaF"><b>Hora Fin: </b>{{cita.Horafin}}:00</p>
+
+                  <ion-button class="edit" shape="round" color="secondary" size="small" (click)="editarCita(cita)">
+                    <ion-icon size="small" slot="icon-only" name="create"></ion-icon></ion-button>
+                  <ion-button class="asis" shape="round" color="danger" size="small" (click)="borrarCita(cita)">
+                    <ion-icon size="small" slot="icon-only" name="trash"></ion-icon></ion-button>
+                </ion-card-content>
+            </ion-card>
+
+  </div>
+</ion-content>
+              <ion-fab (click)="agendarC()" vertical="bottom" horizontal="end" slot="fixed">
+                  <ion-fab-button>
+                    <ion-icon name="add"></ion-icon>
+                  </ion-fab-button>
+              </ion-fab>
+
+              <ion-modal-controller></ion-modal-controller>

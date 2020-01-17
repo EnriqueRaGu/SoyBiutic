@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar slot="right" color="secondary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Menu Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="pantalla">
+              <ion-menu side="start" menuId="first">
+                  <ion-header>
+                    <ion-toolbar color="primary">
+                      <ion-title>Opciones</ion-title>
+                    </ion-toolbar>
+                  </ion-header>
+                  <ion-content>
+                    <ion-list>
+                      <ion-item (click)="cerrarSesion()">Cerrar sesión</ion-item>
+                    </ion-list>
+                  </ion-content>
+                </ion-menu>
+                <ion-router-outlet main></ion-router-outlet>
+    </div> 
+</ion-content>

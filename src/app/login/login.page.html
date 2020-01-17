@@ -1,0 +1,23 @@
+<ion-content>
+    <div class="contenido">
+        <div class="arriba">
+            <img src="assets/icon.png">
+            <h1>Soy Biutic</h1>
+        </div>
+        <div class="abajo">
+            <ion-list>
+                <ion-item>
+                    <ion-label class="label" position="stacked">Usuario</ion-label>
+                    <ion-input type="text" [(ngModel)]="usuario"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label class="label" position="stacked">Contraseña</ion-label>
+                    <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+                </ion-item>
+            </ion-list>
+
+            <ion-button fill="solid" expand="block" (click)="login()"><b>ENTRAR</b></ion-button>
+        </div>
+    </div>
+</ion-content>

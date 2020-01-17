@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-icon (click)="volver()" slot="start" name="arrow-back"></ion-icon>
+    <ion-title>Editar Cita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item>
+        <ion-label position="floating">Nombre del cliente</ion-label>
+        <ion-input [(ngModel)]="cliente"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating">Tipo de servicio</ion-label>
+        <ion-input [(ngModel)]="tipo"></ion-input>
+      </ion-item>
+        
+      <ion-item>
+        <ion-label position="floating">Fecha</ion-label>
+        <ion-input [(ngModel)]="fecha"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Hora inicio</ion-label>
+        <ion-input [(ngModel)]="horainicio"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Hora fin</ion-label>
+        <ion-input [(ngModel)]="horafin"></ion-input>
+      </ion-item>
+    
+      <ion-button class="boton" (click)="agendarCita()">Editar cita</ion-button>
+
+
+</ion-content>
